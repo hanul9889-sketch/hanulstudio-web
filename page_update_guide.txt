@@ -1,0 +1,13 @@
+[page.tsx 문구 수정 사항 정리]
+
+1. 삭제할 문구 (메인 화면에서 아래 문장을 찾아 지워주세요)
+"기존 5대 채널과 신규 확장 3대 채널(Strings & Soloists · Dark Academia · Synthwave & Cyber Ambient)이 각각 7개의 공개(Public) 마스터 재생목록으로 완벽한 대칭을 이룹니다."
+
+2. 클릭 유도 텍스트 확대 교체 (아래 코드로 덮어쓰기)
+<p className="text-xl md:text-2xl font-extrabold text-white mt-4">
+  아래 8개 채널 카드를 클릭하시면 해당 채널의 7개 마스터 재생목록이 바로 아래에 펼쳐집니다.
+</p>
+
+3. 돌비 애트모스 안내 텍스트 교체
+수정 전: "재생 첫 10초(00:00–00:10) Dolby Atmos 3D 공간 돔 점화"
+수정 후: "돌비 애트모스 (Dolby Atmos) 오디오 포맷"
