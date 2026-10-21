@@ -23,7 +23,7 @@ export default function HanulStudioV33Page() {
           <div className="mt-8 w-full overflow-x-auto flex justify-center">
             {/* 확대되고 한 줄로 고정된 안내 문구 */}
             <p className="whitespace-nowrap font-black text-amber-400 text-center tracking-tight px-6 py-3 text-xl sm:text-2xl md:text-3xl">
-              👇 아래 8개 채널 카드를 클릭하시면 해당 채널의 7개 마스터 재생목록이 바로 아래에 펼쳐집니다.
+              👇 아래 8개 채널 카드를 클릭하시면 해당 채널의 7개 마스터 재생목록이 바로 아래에 펼쳐집니다.👇
             </p>
           </div>
         </div>
