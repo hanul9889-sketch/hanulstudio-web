@@ -925,10 +925,12 @@ body {
                 </span>
               </div>
 
+              <!-- 1. 한눈에 들어오는 초대형 채널 타이틀 -->
               <h3 class="text-2xl sm:text-3xl font-black tracking-tight leading-tight my-2" style="color: ${isSel ? ch.color : '#ffffff'};">
                 ${ch.name}
               </h3>
 
+              <!-- 2. Fender Pro 8 제거 & 모바일 최적화 확대 설명 박스 -->
               <div class="mt-4 p-4 rounded-2xl bg-white/[0.05] border border-white/15 shadow-inner">
                 <p class="text-sm sm:text-base font-semibold leading-relaxed" style="color: ${ch.color};">
                   ⚡ ${cleanDesc}
@@ -936,6 +938,7 @@ body {
               </div>
             </div>
 
+            <!-- 3. 재생 목록 보기 확대 & 큼직한 3D 화살표 -->
             <div class="mt-6 pt-4 border-t-2 border-white/10 flex items-center justify-between text-base sm:text-lg font-black tracking-wide" style="color: ${ch.color};">
               <span>${isSel ? '재생 목록 보는 중 ✓' : '재생 목록 보기'}</span>
               <span class="text-2xl sm:text-3xl font-black group-hover:translate-x-2 transition-transform leading-none">➔</span>
