@@ -1004,9 +1004,9 @@ body {
         badgeStyle = 'background-color: rgba(168, 85, 247, 0.22); color: #d8b4fe; border-color: rgba(168, 85, 247, 0.55);';
       }
 
-      // 24K Radiant Gold Playlist Badge with Channel Signature Card Border (8대 채널 카드 색상 연동)
+      // 24K Radiant Gold Playlist Badge with Channel Signature Card Border (8대 채널 카드 색상 연동 - 두꺼운 3px 테두리)
       const playlistBadge = `
-        <span class="inline-flex items-center gap-1.5 px-3 py-1 sm:px-3.5 sm:py-1 rounded-xl text-xs sm:text-sm font-black text-black font-serif italic tracking-wider select-none mr-2 flex-shrink-0 drop-shadow-md" style="background: linear-gradient(135deg, #fffbeb 0%, #fef08a 25%, #ffd700 50%, #f59e0b 75%, #d97706 100%); border: 2px solid ${themeColor}; box-shadow: 0 0 16px ${themeColor}88, inset 0 1.5px 2px rgba(255, 255, 255, 0.9), 0 3px 8px rgba(0,0,0,0.5);">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 sm:px-3.5 sm:py-1 rounded-xl text-xs sm:text-sm font-black text-black font-serif italic tracking-wider select-none mr-2 flex-shrink-0 drop-shadow-md" style="background: linear-gradient(135deg, #fffbeb 0%, #fef08a 25%, #ffd700 50%, #f59e0b 75%, #d97706 100%); border: 3px solid ${themeColor}; box-shadow: 0 0 18px ${themeColor}88, inset 0 1.5px 2px rgba(255, 255, 255, 0.9), 0 3px 8px rgba(0,0,0,0.5);">
           <span class="text-[10px] text-black font-sans not-italic font-black">✦</span>
           <span>𝒑𝒍𝒂𝒚𝒍𝒊𝒔𝒕</span>
         </span>
@@ -1197,7 +1197,7 @@ body {
                 <button onclick="openPlaylistModal(${idx})" class="embossed-action-btn flex-1 lg:flex-initial px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-white flex items-center justify-center gap-1.5">
                   <span>📖</span><span>상세 설명서</span>
                 </button>
-                <a href="${pl.url}" target="_blank" rel="noopener noreferrer" class="embossed-gold-action flex-1 lg:flex-initial px-4.5 py-2.5 rounded-xl text-xs sm:text-sm font-black flex items-center justify-center gap-1.5">
+                <a href="${pl.url}" target="_blank" rel="noopener noreferrer" class="embossed-gold-action flex-1 lg:flex-initial px-4.5 py-2.5 rounded-xl text-xs sm:text-sm font-black flex items-center justify-center gap-1.5" style="border: 3px solid ${ch.color}; box-shadow: 0 0 18px ${ch.color}88, inset 0 1.5px 2px rgba(255, 255, 255, 0.9), 0 4px 12px rgba(0, 0, 0, 0.6);">
                   <span>유튜브 듣기</span><span>▶</span>
                 </a>
               </div>
@@ -1248,7 +1248,7 @@ body {
               </div>
               <div class="pt-2 border-t border-white/10 flex items-center justify-between text-xs z-10 gap-2" onclick="event.stopPropagation()">
                 <button onclick="speakPlaylist(${idx})" class="px-2.5 py-1 rounded-full text-xs font-black bg-white/10 hover:bg-amber-400 hover:text-black text-amber-300 border border-amber-400/40">🔊 낭독</button>
-                <a href="${pl.url}" target="_blank" rel="noopener noreferrer" class="px-3 py-1 rounded-full font-black text-xs bg-white/10 hover:bg-[#d4af37] hover:text-black text-white">유튜브 ▶</a>
+                <a href="${pl.url}" target="_blank" rel="noopener noreferrer" class="embossed-gold-action px-3.5 py-1 rounded-full font-black text-xs text-black flex items-center gap-1" style="border: 2.5px solid ${ch.color}; box-shadow: 0 0 12px ${ch.color}88;"><span>유튜브 듣기</span><span>▶</span></a>
               </div>
             </div>
           `;
@@ -1413,7 +1413,7 @@ body {
             <span class="text-2xl sm:text-3xl">${ch.emoji}</span>
             <div>
               <h3 class="text-base sm:text-xl font-black text-white truncate max-w-xl flex items-center gap-2">
-                <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-lg text-xs sm:text-sm font-black text-black font-serif italic flex-shrink-0 select-none mr-2" style="background: linear-gradient(135deg, #fffbeb 0%, #fef08a 25%, #ffd700 50%, #f59e0b 75%, #d97706 100%); border: 2px solid ${ch.color}; box-shadow: 0 0 12px ${ch.color}88, inset 0 1px 1.5px rgba(255,255,255,0.9);"><span class="text-[9px] text-black font-sans not-italic font-black">✦</span><span>𝒑𝒍𝒂𝒚𝒍𝒊𝒔𝒕</span></span>
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-lg text-xs sm:text-sm font-black text-black font-serif italic flex-shrink-0 select-none mr-2" style="background: linear-gradient(135deg, #fffbeb 0%, #fef08a 25%, #ffd700 50%, #f59e0b 75%, #d97706 100%); border: 3px solid ${ch.color}; box-shadow: 0 0 16px ${ch.color}88, inset 0 1px 1.5px rgba(255,255,255,0.9);"><span class="text-[9px] text-black font-sans not-italic font-black">✦</span><span>𝒑𝒍𝒂𝒚𝒍𝒊𝒔𝒕</span></span>
                 <span class="truncate">${parsePlaylistTitle(pl.title).eng ? parsePlaylistTitle(pl.title).eng + ' | ' + parsePlaylistTitle(pl.title).kor : pl.title}</span>
               </h3>
             </div>
@@ -1434,7 +1434,7 @@ body {
               <span>🔊</span><span>AI 음성 해설 듣기</span>
             </button>
             <button onclick="stopTTS()" class="embossed-action-btn px-3.5 py-2.5 rounded-xl text-xs font-bold text-white">⏹ 정지</button>
-            <a href="${pl.url}" target="_blank" rel="noopener noreferrer" class="embossed-action-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-black text-amber-300">YouTube 바로가기 ↗</a>
+            <a href="${pl.url}" target="_blank" rel="noopener noreferrer" class="embossed-gold-action px-5 py-2.5 rounded-xl text-xs sm:text-sm font-black flex items-center gap-1.5" style="border: 3px solid ${ch.color}; box-shadow: 0 0 18px ${ch.color}88;"><span>유튜브 듣기</span><span>▶</span></a>
           </div>
         </div>
 
