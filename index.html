@@ -53,16 +53,16 @@ body {
 
 /* 1. 사이트 내부 공통 양각화 박스 (모든 컨테이너, 카드 베벨) */
 .embossed-box, .embossed-card {
-  background: linear-gradient(145deg, #1b1926 0%, #0d0c14 100%);
-  border-top: 2px solid rgba(255, 255, 255, 0.28);
-  border-left: 1.5px solid rgba(255, 255, 255, 0.18);
-  border-bottom: 4px solid rgba(0, 0, 0, 0.95);
-  border-right: 2px solid rgba(0, 0, 0, 0.75);
+  background: linear-gradient(145deg, #221f35 0%, #12101e 100%);
+  border-top: 2px solid rgba(255, 255, 255, 0.38);
+  border-left: 1.5px solid rgba(255, 255, 255, 0.24);
+  border-bottom: 5px solid rgba(0, 0, 0, 0.95);
+  border-right: 2px solid rgba(0, 0, 0, 0.85);
   box-shadow: 
-    inset 1.5px 1.5px 2px rgba(255, 255, 255, 0.2),
-    inset -2px -2px 3px rgba(0, 0, 0, 0.8),
-    0 10px 25px -4px rgba(0, 0, 0, 0.85),
-    0 4px 10px -2px rgba(0, 0, 0, 0.7);
+    inset 1.5px 1.5px 2px rgba(255, 255, 255, 0.22),
+    inset -2px -2px 3px rgba(0, 0, 0, 0.85),
+    0 14px 32px -4px rgba(0, 0, 0, 0.92),
+    0 0 25px rgba(139, 92, 246, 0.15);
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   -webkit-tap-highlight-color: transparent;
 }
@@ -155,15 +155,15 @@ body {
 /* 4. 5대 채널 카드 양각화 (Channel Embossed Card) */
 .channel-embossed-card {
   position: relative;
-  background: linear-gradient(145deg, #181624 0%, #0c0b13 100%);
-  border-top: 2px solid rgba(255, 255, 255, 0.28);
-  border-left: 1.5px solid rgba(255, 255, 255, 0.18);
+  background: linear-gradient(145deg, #221f35 0%, #12101e 100%);
+  border-top: 2px solid rgba(255, 255, 255, 0.38);
+  border-left: 1.5px solid rgba(255, 255, 255, 0.24);
   border-bottom: 5px solid rgba(0, 0, 0, 0.95);
-  border-right: 2px solid rgba(0, 0, 0, 0.8);
+  border-right: 2px solid rgba(0, 0, 0, 0.85);
   box-shadow: 
-    inset 1.5px 1.5px 2px rgba(255, 255, 255, 0.15),
+    inset 1.5px 1.5px 2px rgba(255, 255, 255, 0.2),
     inset -2px -2px 3px rgba(0, 0, 0, 0.85),
-    0 12px 25px -4px rgba(0, 0, 0, 0.85);
+    0 14px 28px -4px rgba(0, 0, 0, 0.9);
   transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
   -webkit-tap-highlight-color: transparent;
   user-select: none;
@@ -190,28 +190,26 @@ body {
 
 /* 5. 재생목록 행/카드 양각화 (Playlist Embossed Item) */
 .playlist-embossed-item {
-  background: linear-gradient(145deg, #161522 0%, #0d0c14 100%);
-  border-top: 1.5px solid rgba(255, 255, 255, 0.2);
-  border-left: 1px solid rgba(255, 255, 255, 0.12);
-  border-bottom: 4px solid rgba(0, 0, 0, 0.9);
-  border-right: 1.5px solid rgba(0, 0, 0, 0.7);
+  background: linear-gradient(145deg, #221f36 0%, #131122 100%);
+  border-top: 2px solid rgba(255, 255, 255, 0.32);
+  border-left: 1.5px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 4.5px solid rgba(0, 0, 0, 0.95);
+  border-right: 2px solid rgba(0, 0, 0, 0.75);
   box-shadow: 
-    inset 1px 1px 1.5px rgba(255, 255, 255, 0.12),
-    inset -1.5px -1.5px 2px rgba(0, 0, 0, 0.7),
-    0 8px 18px -2px rgba(0, 0, 0, 0.75);
+    inset 1px 1px 1.5px rgba(255, 255, 255, 0.18),
+    inset -1.5px -1.5px 2px rgba(0, 0, 0, 0.8),
+    0 8px 22px -2px rgba(0, 0, 0, 0.85);
   transition: all 0.16s cubic-bezier(0.16, 1, 0.3, 1);
   -webkit-tap-highlight-color: transparent;
 }
 
 .playlist-embossed-item:hover {
-  background: linear-gradient(145deg, #201e30 0%, #12111d 100%);
-  border-top-color: rgba(255, 215, 0, 0.7);
+  background: linear-gradient(145deg, #2c2844 0%, #18152b 100%);
   transform: translateY(-2px);
-  border-bottom-width: 5px;
+  border-bottom-width: 5.5px;
   box-shadow: 
-    inset 1px 1px 2px rgba(255, 255, 255, 0.3),
-    0 14px 28px -3px rgba(0, 0, 0, 0.85),
-    0 0 22px rgba(245, 158, 11, 0.25);
+    inset 1px 1px 2px rgba(255, 255, 255, 0.35),
+    0 16px 32px -3px rgba(0, 0, 0, 0.9);
 }
 
 .playlist-embossed-item:active {
@@ -996,7 +994,7 @@ body {
       return lines[0] || rawGuide;
     }
 
-    function formatPlaylistTitleHTML(rawTitle, isModal = false) {
+    function formatPlaylistTitleHTML(rawTitle, isModal = false, themeColor = '#F59E0B') {
       const { kor, eng, fmt } = parsePlaylistTitle(rawTitle);
       
       let badgeStyle = 'background-color: rgba(245, 158, 11, 0.22); color: #fde047; border-color: rgba(245, 158, 11, 0.55);';
@@ -1019,19 +1017,37 @@ body {
         </span>
       ` : '';
 
+      // Prominent, enlarged Global Title with high-visibility vibrant Sky-Cyan styling
+      const globalBadgeHtml = eng ? `
+        <div class="mt-1 flex items-center gap-2 sm:gap-2.5 flex-wrap">
+          <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-[11px] sm:text-xs font-black tracking-widest uppercase font-mono bg-sky-500/25 text-sky-200 border border-sky-400/60 shadow-sm flex-shrink-0">
+            GLOBAL
+          </span>
+          <span class="text-sm sm:text-base md:text-lg font-bold text-sky-300 group-hover:text-sky-200 tracking-wide font-sans drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)] break-keep">
+            ${eng}
+          </span>
+        </div>
+      ` : '';
+
       if (isModal) {
         return `
           <div class="space-y-2">
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
               <div class="flex items-center gap-2 flex-wrap min-w-0">
                 ${playlistBadge}
-                <span class="text-xl sm:text-2xl md:text-3xl font-black text-white drop-shadow-md leading-snug break-keep">${kor}</span>
+                <!-- Soft, warm soothing moonlight cream tone for eye-friendly nighttime reading -->
+                <span class="text-xl sm:text-2xl md:text-3xl font-black text-[#fef3c7] drop-shadow-md leading-snug break-keep">${kor}</span>
               </div>
               <div class="flex-shrink-0 self-start sm:self-auto sm:ml-auto">
                 ${badgeHtml}
               </div>
             </div>
-            ${eng ? `<div class="text-xs sm:text-sm md:text-base font-bold text-amber-300/85 tracking-wide font-sans flex items-center gap-2"><span class="text-white/40">Global Title:</span> <span>${eng}</span></div>` : ''}
+            ${eng ? `
+              <div class="mt-2 flex items-center gap-2.5 flex-wrap">
+                <span class="inline-flex items-center px-3 py-1 rounded-lg text-xs font-black tracking-widest uppercase font-mono bg-sky-500/30 text-sky-200 border border-sky-400/70 shadow-md flex-shrink-0">GLOBAL TITLE</span>
+                <span class="text-base sm:text-lg md:text-xl font-extrabold text-sky-300 tracking-wide font-sans drop-shadow-sm">${eng}</span>
+              </div>
+            ` : ''}
           </div>
         `;
       } else {
@@ -1040,13 +1056,14 @@ body {
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
               <div class="flex items-center gap-2 flex-wrap min-w-0">
                 ${playlistBadge}
-                <span class="text-base sm:text-xl md:text-2xl font-black text-white group-hover:text-amber-300 transition-colors leading-snug break-keep">${kor}</span>
+                <!-- Soft, warm soothing moonlight cream tone for eye-friendly nighttime reading (replaces harsh stark white) -->
+                <span class="text-base sm:text-xl md:text-2xl font-black text-[#fef3c7] group-hover:text-amber-300 transition-colors leading-snug break-keep drop-shadow-[0_1px_2px_rgba(0,0,0,0.7)]">${kor}</span>
               </div>
               <div class="flex-shrink-0 self-start sm:self-auto sm:ml-auto">
                 ${badgeHtml}
               </div>
             </div>
-            ${eng ? `<div class="text-xs sm:text-sm font-medium text-white/60 tracking-normal flex items-center gap-1.5"><span class="text-white/40 font-mono text-[11px] uppercase">Global:</span> <span>${eng}</span></div>` : ''}
+            ${globalBadgeHtml}
           </div>
         `;
       }
@@ -1133,7 +1150,8 @@ body {
       const ch = getSelectedChannel();
       const container = document.getElementById('playlist-showcase-container');
       container.style.borderColor = ch.color;
-      container.style.boxShadow = `0 0 50px ${ch.color}30`;
+      container.style.background = `linear-gradient(180deg, ${ch.color}15 0%, #191629 30%, #0e0d19 100%)`;
+      container.style.boxShadow = `0 24px 60px -10px rgba(0,0,0,0.95), 0 0 45px ${ch.color}40, inset 0 2px 4px rgba(255,255,255,0.22)`;
 
       // Header
       document.getElementById('selected-channel-header').innerHTML = `
@@ -1175,21 +1193,21 @@ body {
           const trackCode = pl.code || `${ch.code}_0${idx + 1}`;
           const guideSnippet = getCleanListeningGuide(pl.listeningGuide);
           rowsHtml += `
-            <div onclick="openPlaylistModal(${idx})" class="playlist-embossed-item rounded-2xl sm:rounded-3xl p-4 sm:p-6 transition-all flex flex-col lg:flex-row lg:items-center justify-between gap-5 group cursor-pointer">
+            <div onclick="openPlaylistModal(${idx})" class="playlist-embossed-item rounded-2xl sm:rounded-3xl p-4 sm:p-6 transition-all flex flex-col lg:flex-row lg:items-center justify-between gap-5 group cursor-pointer" style="border: 1.5px solid ${ch.color}45; border-top: 2px solid rgba(255,255,255,0.38); box-shadow: 0 8px 24px -2px rgba(0,0,0,0.85), 0 0 20px ${ch.color}20;">
               <div class="flex items-start gap-4 sm:gap-5 min-w-0 flex-1">
-                <div class="w-12 h-12 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-white/10 to-white/5 border border-white/25 flex items-center justify-center flex-shrink-0 shadow-md group-hover:scale-110 transition-transform">
+                <div class="w-12 h-12 sm:w-16 sm:h-16 rounded-2xl border-2 flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform" style="background: linear-gradient(135deg, ${ch.color}25 0%, rgba(255,255,255,0.06) 100%); border-color: ${ch.color}70; box-shadow: 0 0 20px ${ch.color}25;">
                   <span class="text-2xl sm:text-4xl">${ch.emoji}</span>
                 </div>
                 <div class="min-w-0 flex-1 space-y-2">
                   
 
                   <div>
-                    ${formatPlaylistTitleHTML(pl.title, false)}
+                    ${formatPlaylistTitleHTML(pl.title, false, ch.color)}
                   </div>
 
-                  <p class="text-xs sm:text-base font-bold text-amber-100/90 flex items-center gap-2">
-                    <span class="text-amber-400">✦</span>
-                    <span>${pl.subtitle}</span>
+                  <p class="text-xs sm:text-base font-bold flex items-center gap-2" style="color: ${ch.color};">
+                    <span>✦</span>
+                    <span class="text-amber-100/95">${pl.subtitle}</span>
                   </p>
 
                   <p class="text-xs sm:text-sm text-[#ded7cb] leading-relaxed">
@@ -1197,11 +1215,11 @@ body {
                   </p>
 
                   ${guideSnippet ? `
-                    <div class="mt-2 p-3 rounded-xl bg-white/[0.04] border border-white/10 flex items-start gap-2.5 text-xs sm:text-sm text-amber-200/90 leading-relaxed">
+                    <div class="mt-2.5 p-3 rounded-xl border flex items-start gap-2.5 text-xs sm:text-sm leading-relaxed" style="background-color: ${ch.color}12; border-color: ${ch.color}40;">
                       <span class="text-base flex-shrink-0">🎧</span>
                       <div>
-                        <strong class="text-amber-300 font-black mr-1">취향 &amp; 추천 상황:</strong>
-                        <span class="text-white/80">${guideSnippet}</span>
+                        <strong class="font-black mr-1" style="color: ${ch.color};">취향 &amp; 추천 상황:</strong>
+                        <span class="text-[#f1ece1]">${guideSnippet}</span>
                       </div>
                     </div>
                   ` : ''}
@@ -1225,9 +1243,9 @@ body {
 
         area.innerHTML = `
           <div class="embossed-box rounded-3xl overflow-hidden shadow-2xl">
-            <div class="bg-[#14131e] border-b-2 border-black/80 px-4 sm:px-6 py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div class="border-b-2 border-black/80 px-4 sm:px-6 py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3" style="background: linear-gradient(180deg, #25213b 0%, #151325 100%); border-color: ${ch.color}40;">
               <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-xl bg-amber-400/20 border border-amber-400/40 text-amber-300 flex items-center justify-center text-lg font-black">✦</div>
+                <div class="w-10 h-10 rounded-xl border flex items-center justify-center text-lg font-black shadow-md" style="background-color: ${ch.color}30; border-color: ${ch.color}; color: ${ch.color};">✦</div>
                 <div>
                   <h3 class="text-sm sm:text-lg font-black text-white">${ch.name} (${ch.code}) • 56 마스터 사운드 테라피 카탈로그</h3>
                   <p class="text-xs text-amber-300/80 font-mono mt-0.5">7개 공개(Public) 컬렉션 • 00:00.2s Cold Open • Fender Studio Pro 8 64-Bit Float</p>
