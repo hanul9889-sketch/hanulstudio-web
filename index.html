@@ -1004,9 +1004,9 @@ body {
         badgeStyle = 'background-color: rgba(168, 85, 247, 0.22); color: #d8b4fe; border-color: rgba(168, 85, 247, 0.55);';
       }
 
-      // 24K Radiant Luminous Gold Playlist Badge (광채나는 황금색)
+      // 24K Radiant Gold Playlist Badge with Channel Signature Card Border (8대 채널 카드 색상 연동)
       const playlistBadge = `
-        <span class="inline-flex items-center gap-1.5 px-3 py-1 sm:px-3.5 sm:py-1 rounded-xl text-xs sm:text-sm font-black text-black border border-[#fffbeb] shadow-[0_0_20px_rgba(251,191,36,0.75),inset_0_1.5px_2px_rgba(255,255,255,0.95),0_3px_8px_rgba(0,0,0,0.5)] font-serif italic tracking-wider select-none mr-2 flex-shrink-0 drop-shadow-md" style="background: linear-gradient(135deg, #fffbeb 0%, #fef08a 25%, #ffd700 50%, #f59e0b 75%, #d97706 100%);">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 sm:px-3.5 sm:py-1 rounded-xl text-xs sm:text-sm font-black text-black font-serif italic tracking-wider select-none mr-2 flex-shrink-0 drop-shadow-md" style="background: linear-gradient(135deg, #fffbeb 0%, #fef08a 25%, #ffd700 50%, #f59e0b 75%, #d97706 100%); border: 2px solid ${themeColor}; box-shadow: 0 0 16px ${themeColor}88, inset 0 1.5px 2px rgba(255, 255, 255, 0.9), 0 3px 8px rgba(0,0,0,0.5);">
           <span class="text-[10px] text-black font-sans not-italic font-black">✦</span>
           <span>𝒑𝒍𝒂𝒚𝒍𝒊𝒔𝒕</span>
         </span>
@@ -1243,7 +1243,7 @@ body {
             <div onclick="openPlaylistModal(${idx})" class="tactile-surface tactile-surface-hover group cursor-pointer relative ${ratioCls} w-full rounded-2xl sm:rounded-3xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between p-5 overflow-hidden" style="border: 2px solid ${ch.color}55; border-top-color: #ffffff;">
               
               <div class="z-10 my-auto py-3">
-                <div class="leading-snug mb-2 text-base sm:text-lg line-clamp-3">${formatPlaylistTitleHTML(pl.title, false)}</div>
+                <div class="leading-snug mb-2 text-base sm:text-lg line-clamp-3">${formatPlaylistTitleHTML(pl.title, false, ch.color)}</div>
                 <p class="font-bold text-amber-100/90 text-xs sm:text-sm line-clamp-2">${pl.subtitle}</p>
               </div>
               <div class="pt-2 border-t border-white/10 flex items-center justify-between text-xs z-10 gap-2" onclick="event.stopPropagation()">
@@ -1413,7 +1413,7 @@ body {
             <span class="text-2xl sm:text-3xl">${ch.emoji}</span>
             <div>
               <h3 class="text-base sm:text-xl font-black text-white truncate max-w-xl flex items-center gap-2">
-                <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-lg text-xs sm:text-sm font-black text-black border border-[#fffbeb] shadow-[0_0_14px_rgba(251,191,36,0.7),inset_0_1px_1.5px_rgba(255,255,255,0.95)] font-serif italic flex-shrink-0 select-none mr-2" style="background: linear-gradient(135deg, #fffbeb 0%, #fef08a 25%, #ffd700 50%, #f59e0b 75%, #d97706 100%);"><span class="text-[9px] text-black font-sans not-italic font-black">✦</span><span>𝒑𝒍𝒂𝒚𝒍𝒊𝒔𝒕</span></span>
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-lg text-xs sm:text-sm font-black text-black font-serif italic flex-shrink-0 select-none mr-2" style="background: linear-gradient(135deg, #fffbeb 0%, #fef08a 25%, #ffd700 50%, #f59e0b 75%, #d97706 100%); border: 2px solid ${ch.color}; box-shadow: 0 0 12px ${ch.color}88, inset 0 1px 1.5px rgba(255,255,255,0.9);"><span class="text-[9px] text-black font-sans not-italic font-black">✦</span><span>𝒑𝒍𝒂𝒚𝒍𝒊𝒔𝒕</span></span>
                 <span class="truncate">${parsePlaylistTitle(pl.title).eng ? parsePlaylistTitle(pl.title).eng + ' | ' + parsePlaylistTitle(pl.title).kor : pl.title}</span>
               </h3>
             </div>
