@@ -556,7 +556,7 @@ body {
         <h2 class="text-3xl sm:text-5xl md:text-6xl font-black text-white tracking-tight mb-5">
           과학이 증명한 치유의 소리
         </h2>
-        <p class="text-[#c4bdb2] text-base md:text-xl max-w-4xl mx-auto leading-relaxed">
+        <p class="text-amber-100/95 text-base md:text-xl max-w-4xl mx-auto leading-relaxed">
           HanulStudio의 8대 채널 56개 재생목록은 단순한 배경음악이 아닙니다. <span class="text-amber-400 font-bold">임상 신경과학, 뇌파 동조(FFR), 00:00–00:10 즉각 입체음향 훅, 그리고 Fender Studio Pro 8 64비트 마스터링</span>이 결합된 기능성 사운드 테라피입니다.
         </p>
 
@@ -586,7 +586,7 @@ body {
         <h3 class="text-2xl sm:text-3xl md:text-4xl font-black text-white mt-2 mb-4">
           기계적인 AI 양산형 음악 0% — 오직 한울스튜디오에서만
         </h3>
-        <p class="text-[#eae5dc] text-sm md:text-base max-w-3xl mx-auto leading-relaxed mb-8 font-medium">
+        <p class="text-amber-50 text-sm md:text-base max-w-3xl mx-auto leading-relaxed mb-8 font-medium">
           시중의 저품질 AI 음악은 거슬리는 디지털 양자화 노이즈(12kHz 링잉)와 귀를 찌르는 피크로 장시간 청취 시 두통과 청각 피로를 유발합니다.<br />
           HanulStudio는 <strong class="text-amber-300 font-black">Fender Studio Pro 8 64-Bit Float 프로세싱</strong>, <strong class="text-amber-300 font-black">00:00–00:10 Dolby Atmos 3D / 8D 즉각 입체음향 훅</strong>, <strong class="text-amber-300 font-black">1727 크레모나 명기 &amp; Omnisphere 3</strong>를 결합하여 8대 채널 56개 전수 컬렉션에서 무손실 치유 경험을 보장합니다.
         </p>
@@ -613,7 +613,7 @@ body {
       <h2 class="text-3xl sm:text-5xl font-black text-white mb-4">
         🧠 뇌파 임상 &amp; <span class="text-amber-400">Fender Studio Pro 8</span> 초격차 마스터링 센터
       </h2>
-      <p class="text-base sm:text-lg text-[#d2cbc0] max-w-4xl leading-relaxed mb-8">
+      <p class="text-base sm:text-lg text-amber-100/95 max-w-4xl leading-relaxed mb-8">
         평면적인 2채널 스테레오에 단순 사인파를 얹은 시중의 가짜 음원들을 단호히 거부합니다. 하버드·MIT 임상 뇌파 동조(FFR)와 <strong>Fender Studio Pro 8 64비트 마스터링 워크플로우</strong>, 그리고 <strong>초반 10초(00:00–00:10) Zero-Click 입체음향 훅</strong>의 기술적 아키텍처를 공개합니다.
       </p>
 
@@ -700,7 +700,7 @@ body {
   </div>
 
   <!-- 8. FOOTER & B2B DIRECT CONTACT -->
-  <footer class="border-t-2 border-white/10 bg-[#070709] py-16 px-4 sm:px-8 text-center text-xs text-[#b8b0a2]">
+  <footer class="border-t-2 border-white/10 bg-[#070709] py-16 px-4 sm:px-8 text-center text-xs text-amber-200/90">
     <div class="max-w-4xl mx-auto space-y-6">
       <div class="flex flex-wrap items-center justify-center gap-3.5 mb-2">
         <span class="font-black text-xl sm:text-2xl text-white tracking-wider">
@@ -737,7 +737,7 @@ body {
         </div>
       </div>
 
-      <div class="pt-4 text-xs text-[#8c8476]">
+      <div class="pt-4 text-xs text-amber-300/80">
         © 2026 HanulStudio. All rights reserved. 8 Official YouTube Channels · 56 Master Playlists · Mastered in Fender Studio Pro 8.
       </div>
     </div>
@@ -1004,7 +1004,7 @@ body {
         badgeStyle = 'background-color: rgba(168, 85, 247, 0.22); color: #d8b4fe; border-color: rgba(168, 85, 247, 0.55);';
       }
 
-      // High-contrast vibrant Electric Rose / Ruby playlist badge (clearly stands out from gold/amber surroundings)
+      // 24K Antique Gold & Dark Obsidian Luxury Playlist Badge
       const playlistBadge = `
         <span class="inline-flex items-center gap-1.5 px-3 py-1 sm:px-3.5 sm:py-1 rounded-xl text-xs sm:text-sm font-extrabold bg-gradient-to-b from-[#262016] via-[#1a150e] to-[#0f0c08] text-[#fef08a] border border-[#d97706]/75 shadow-[inset_0_1px_1.5px_rgba(254,243,199,0.4),0_3px_10px_rgba(0,0,0,0.85),0_0_15px_rgba(245,158,11,0.22)] font-serif italic tracking-wider select-none mr-2 flex-shrink-0 drop-shadow-sm">
           <span class="text-[10px] text-amber-400 font-sans not-italic">✦</span>
@@ -1013,58 +1013,38 @@ body {
       `;
 
       const badgeHtml = fmt ? `
-        <span class="inline-flex items-center text-xs sm:text-sm font-black px-3 py-1 rounded-xl border shadow-md font-mono tracking-tight align-middle my-1 sm:my-0.5 whitespace-nowrap flex-shrink-0" style="${badgeStyle}">
+        <span class="inline-flex items-center text-xs sm:text-sm font-black px-3.5 py-1 rounded-xl border shadow-md font-mono tracking-tight align-middle my-1 sm:my-0.5 whitespace-nowrap flex-shrink-0" style="${badgeStyle}">
           ${fmt}
         </span>
       ` : '';
 
-      // Prominent, enlarged Global Title with high-visibility vibrant Sky-Cyan styling
-      const globalBadgeHtml = eng ? `
-        <div class="mt-1 flex items-center gap-2 sm:gap-2.5 flex-wrap">
-          <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-[11px] sm:text-xs font-black tracking-widest uppercase font-mono bg-sky-500/25 text-sky-200 border border-sky-400/60 shadow-sm flex-shrink-0">
-            GLOBAL
-          </span>
-          <span class="text-sm sm:text-base md:text-lg font-bold text-sky-300 group-hover:text-sky-200 tracking-wide font-sans drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)] break-keep">
-            ${eng}
-          </span>
-        </div>
-      ` : '';
-
       if (isModal) {
         return `
-          <div class="space-y-2">
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
-              <div class="flex items-center gap-2 flex-wrap min-w-0">
-                ${playlistBadge}
-                <!-- Soft, warm soothing moonlight cream tone for eye-friendly nighttime reading -->
-                <span class="text-xl sm:text-2xl md:text-3xl font-black text-[#fef3c7] drop-shadow-md leading-snug break-keep">${kor}</span>
-              </div>
-              <div class="flex-shrink-0 self-start sm:self-auto sm:ml-auto">
-                ${badgeHtml}
-              </div>
+          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2.5">
+            <div class="flex items-center gap-2 flex-wrap min-w-0">
+              ${playlistBadge}
+              <span class="text-lg sm:text-xl md:text-2xl font-black text-white leading-snug break-keep drop-shadow-md">
+                ${eng ? `<span class="text-white font-extrabold">${eng}</span> <span class="text-amber-400 font-black mx-1.5">|</span> ` : ''}<span class="text-[#fef08a] font-bold">${kor}</span>
+              </span>
             </div>
-            ${eng ? `
-              <div class="mt-2 flex items-center gap-2.5 flex-wrap">
-                <span class="inline-flex items-center px-3 py-1 rounded-lg text-xs font-black tracking-widest uppercase font-mono bg-sky-500/30 text-sky-200 border border-sky-400/70 shadow-md flex-shrink-0">GLOBAL TITLE</span>
-                <span class="text-base sm:text-lg md:text-xl font-extrabold text-sky-300 tracking-wide font-sans drop-shadow-sm">${eng}</span>
-              </div>
-            ` : ''}
+            <div class="flex-shrink-0 self-start sm:self-auto sm:ml-auto">
+              ${badgeHtml}
+            </div>
           </div>
         `;
       } else {
         return `
-          <div class="flex flex-col gap-1.5">
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-              <div class="flex items-center gap-2 flex-wrap min-w-0">
-                ${playlistBadge}
-                <!-- Soft, warm soothing moonlight cream tone for eye-friendly nighttime reading (replaces harsh stark white) -->
-                <span class="text-base sm:text-xl md:text-2xl font-black text-[#fef3c7] group-hover:text-amber-300 transition-colors leading-snug break-keep drop-shadow-[0_1px_2px_rgba(0,0,0,0.7)]">${kor}</span>
-              </div>
-              <div class="flex-shrink-0 self-start sm:self-auto sm:ml-auto">
-                ${badgeHtml}
-              </div>
+          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
+            <div class="flex items-center gap-2 flex-wrap min-w-0">
+              ${playlistBadge}
+              <!-- 100% exact match with YouTube video title: [playlist] English Title | Korean Title -->
+              <span class="text-base sm:text-lg md:text-xl font-black text-white group-hover:text-amber-300 transition-colors leading-snug break-keep drop-shadow-sm">
+                ${eng ? `<span class="text-white font-extrabold">${eng}</span> <span class="text-amber-400 font-black mx-1.5">|</span> ` : ''}<span class="text-[#fef08a] font-bold">${kor}</span>
+              </span>
             </div>
-            ${globalBadgeHtml}
+            <div class="flex-shrink-0 self-start sm:self-auto sm:ml-auto">
+              ${badgeHtml}
+            </div>
           </div>
         `;
       }
@@ -1170,7 +1150,7 @@ body {
               </p>
             </div>
           </div>
-          <p class="text-sm sm:text-base md:text-lg text-[#d2cbc0] mt-4 font-medium leading-relaxed max-w-4xl">
+          <p class="text-sm sm:text-base md:text-lg text-amber-100/95 mt-4 font-medium leading-relaxed max-w-4xl">
             ⚡ ${ch.desc}
           </p>
         </div>
@@ -1192,38 +1172,21 @@ body {
         let rowsHtml = '';
         ch.playlists.forEach((pl, idx) => {
           const trackCode = pl.code || `${ch.code}_0${idx + 1}`;
-          const guideSnippet = getCleanListeningGuide(pl.listeningGuide);
           rowsHtml += `
-            <div onclick="openPlaylistModal(${idx})" class="playlist-embossed-item rounded-2xl sm:rounded-3xl p-4 sm:p-6 transition-all flex flex-col lg:flex-row lg:items-center justify-between gap-5 group cursor-pointer" style="border: 1.5px solid ${ch.color}45; border-top: 2px solid rgba(255,255,255,0.38); box-shadow: 0 8px 24px -2px rgba(0,0,0,0.85), 0 0 20px ${ch.color}20;">
-              <div class="flex items-start gap-4 sm:gap-5 min-w-0 flex-1">
-                <div class="w-12 h-12 sm:w-16 sm:h-16 rounded-2xl border-2 flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform" style="background: linear-gradient(135deg, ${ch.color}25 0%, rgba(255,255,255,0.06) 100%); border-color: ${ch.color}70; box-shadow: 0 0 20px ${ch.color}25;">
-                  <span class="text-2xl sm:text-4xl">${ch.emoji}</span>
+            <div onclick="openPlaylistModal(${idx})" class="playlist-embossed-item rounded-2xl sm:rounded-3xl p-4 sm:p-5 transition-all flex flex-col lg:flex-row lg:items-center justify-between gap-4 group cursor-pointer" style="border: 1.5px solid ${ch.color}45; border-top: 2px solid rgba(255,255,255,0.38); box-shadow: 0 8px 24px -2px rgba(0,0,0,0.85), 0 0 20px ${ch.color}20;">
+              <div class="flex items-start gap-3.5 sm:gap-4 min-w-0 flex-1">
+                <div class="w-11 h-11 sm:w-14 sm:h-14 rounded-2xl border-2 flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform" style="background: linear-gradient(135deg, ${ch.color}25 0%, rgba(255,255,255,0.06) 100%); border-color: ${ch.color}70; box-shadow: 0 0 20px ${ch.color}25;">
+                  <span class="text-xl sm:text-3xl">${ch.emoji}</span>
                 </div>
-                <div class="min-w-0 flex-1 space-y-2">
-                  
+                <div class="min-w-0 flex-1 space-y-1.5">
+                  <!-- Exactly unified YouTube Video Title -->
+                  ${formatPlaylistTitleHTML(pl.title, false, ch.color)}
 
-                  <div>
-                    ${formatPlaylistTitleHTML(pl.title, false, ch.color)}
-                  </div>
-
-                  <p class="text-xs sm:text-base font-bold flex items-center gap-2" style="color: ${ch.color};">
-                    <span>✦</span>
-                    <span class="text-amber-100/95">${pl.subtitle}</span>
+                  <!-- High-contrast, clean luminous experience summary (eliminates clutter & gray tones) -->
+                  <p class="text-xs sm:text-sm md:text-base font-medium text-amber-100/95 leading-relaxed flex items-center gap-2">
+                    <span class="text-amber-400 flex-shrink-0">✦</span>
+                    <span class="text-amber-100">${pl.desc}</span>
                   </p>
-
-                  <p class="text-xs sm:text-sm text-[#ded7cb] leading-relaxed">
-                    ${pl.desc}
-                  </p>
-
-                  ${guideSnippet ? `
-                    <div class="mt-2.5 p-3 rounded-xl border flex items-start gap-2.5 text-xs sm:text-sm leading-relaxed" style="background-color: ${ch.color}12; border-color: ${ch.color}40;">
-                      <span class="text-base flex-shrink-0">🎧</span>
-                      <div>
-                        <strong class="font-black mr-1" style="color: ${ch.color};">취향 &amp; 추천 상황:</strong>
-                        <span class="text-[#f1ece1]">${guideSnippet}</span>
-                      </div>
-                    </div>
-                  ` : ''}
                 </div>
               </div>
 
@@ -1387,7 +1350,7 @@ body {
             <div class="flex items-center gap-2 pb-3 border-b border-white/10 text-amber-300 font-bold text-sm sm:text-base">
               <span>🏛️</span><span>음향심리학 심층 도슨트 &amp; 스토리 해설</span>
             </div>
-            <div class="text-base sm:text-lg leading-relaxed text-[#f3ece0] whitespace-pre-line">
+            <div class="text-base sm:text-lg leading-relaxed text-white whitespace-pre-line">
               ${pl.detailedStory}
             </div>
           </div>
@@ -1451,7 +1414,7 @@ body {
             <div>
               <h3 class="text-base sm:text-xl font-black text-white truncate max-w-xl flex items-center gap-2">
                 <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-lg text-xs sm:text-sm font-extrabold bg-gradient-to-b from-[#262016] to-[#120f0a] text-[#fef08a] border border-[#d97706]/70 shadow-sm font-serif italic flex-shrink-0"><span class="text-[9px] text-amber-400 font-sans not-italic">✦</span><span>𝒑𝒍𝒂𝒚𝒍𝒊𝒔𝒕</span></span>
-                <span class="truncate">${parsePlaylistTitle(pl.title).kor || pl.title}</span>
+                <span class="truncate">${parsePlaylistTitle(pl.title).eng ? parsePlaylistTitle(pl.title).eng + ' | ' + parsePlaylistTitle(pl.title).kor : pl.title}</span>
               </h3>
             </div>
           </div>
@@ -1459,13 +1422,12 @@ body {
         </div>
 
         <div class="p-6 border-b border-white/15 flex flex-col lg:flex-row lg:items-center justify-between gap-5" style="background: linear-gradient(135deg, ${ch.color}30 0%, #0d0c14 100%);">
-          <div class="space-y-3.5 flex-1 min-w-0">
+          <div class="space-y-3 flex-1 min-w-0">
             <!-- Distinct Pill Badge with generous margin ensuring NO overlap with [playlist] -->
-            <div class="mb-3.5">
+            <div>
               <span class="text-xs sm:text-sm font-black px-3.5 py-1.5 rounded-full border shadow-md ${pl.badgeColor}">${pl.badge}</span>
             </div>
-            ${formatPlaylistTitleHTML(pl.title, true)}
-            <p class="text-sm sm:text-lg text-amber-200 font-bold mt-2">${pl.subtitle}</p>
+            ${formatPlaylistTitleHTML(pl.title, true, ch.color)}
           </div>
           <div class="flex flex-wrap items-center gap-2.5 flex-shrink-0">
             <button onclick="speakPlaylist(${selectedPlaylistIndex})" class="embossed-gold-action px-5 py-2.5 rounded-xl text-xs sm:text-sm font-black flex items-center gap-2">
@@ -1532,7 +1494,7 @@ body {
               </div>
               <h3 class="text-lg sm:text-xl font-black text-white group-hover:text-amber-300 transition-colors leading-snug mb-2">${sp.title}</h3>
               <p class="text-xs sm:text-sm font-bold mb-3" style="color: ${sp.color};">${sp.subtitle}</p>
-              <p class="text-xs sm:text-sm text-[#eae5dc] leading-relaxed mb-5">${sp.summary}</p>
+              <p class="text-xs sm:text-sm text-amber-50 leading-relaxed mb-5">${sp.summary}</p>
             </div>
             <div class="pt-3 border-t border-white/10 flex items-center justify-between text-xs font-bold text-amber-300">
               <span>임상 원리 &amp; Fender 스펙 보기</span>
@@ -1561,15 +1523,15 @@ body {
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
           <div class="p-5 rounded-2xl bg-white/[0.04] border border-white/10">
             <h4 class="text-sm sm:text-base font-black text-[#d4af37] mb-2">🔬 신경생리학 및 음향 메커니즘</h4>
-            <p class="text-sm sm:text-base leading-relaxed text-[#eae5dc]">${sp.mechanism}</p>
+            <p class="text-sm sm:text-base leading-relaxed text-amber-50">${sp.mechanism}</p>
           </div>
           <div class="p-5 rounded-2xl bg-white/[0.04] border border-white/10">
             <h4 class="text-sm sm:text-base font-black text-emerald-400 mb-2">📊 임상 검증 효과 &amp; 연구 데이터</h4>
-            <p class="text-sm sm:text-base leading-relaxed text-[#eae5dc] whitespace-pre-line">${sp.clinicalProof}</p>
+            <p class="text-sm sm:text-base leading-relaxed text-amber-50 whitespace-pre-line">${sp.clinicalProof}</p>
           </div>
           <div class="p-5 rounded-2xl bg-white/[0.04] border border-white/10">
             <h4 class="text-sm sm:text-base font-black text-cyan-400 mb-2">🎛️ Fender Studio Pro 8 하이엔드 엔지니어링</h4>
-            <p class="text-sm sm:text-base leading-relaxed text-[#eae5dc] whitespace-pre-line">${sp.craftsmanship}</p>
+            <p class="text-sm sm:text-base leading-relaxed text-amber-50 whitespace-pre-line">${sp.craftsmanship}</p>
           </div>
           <div class="p-5 rounded-2xl bg-amber-500/10 border border-amber-500/40">
             <h4 class="text-sm sm:text-base font-black text-amber-300 mb-2">🎧 최적 청취 가이드</h4>
