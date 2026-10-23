@@ -1008,41 +1008,41 @@ body {
 
       // High-contrast vibrant Electric Rose / Ruby playlist badge (clearly stands out from gold/amber surroundings)
       const playlistBadge = `
-        <span class="inline-flex items-center px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-xl text-xs sm:text-sm md:text-base font-black bg-gradient-to-r from-rose-600 via-rose-500 to-red-500 text-white border-2 border-rose-300/80 shadow-[0_0_16px_rgba(244,63,94,0.45)] font-serif italic tracking-wider align-middle select-none mr-2.5 flex-shrink-0 drop-shadow-md">
+        <span class="inline-flex items-center px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-xl text-xs sm:text-sm font-black bg-gradient-to-r from-rose-600 via-rose-500 to-red-500 text-white border-2 border-rose-300/80 shadow-[0_0_16px_rgba(244,63,94,0.45)] font-serif italic tracking-wider align-middle select-none mr-2 flex-shrink-0 drop-shadow-md">
           [𝒑𝒍𝒂𝒚𝒍𝒊𝒔𝒕]
         </span>
       `;
 
       const badgeHtml = fmt ? `
-        <span class="inline-flex items-center text-xs sm:text-sm font-black px-3 py-1 rounded-xl border shadow-md font-mono tracking-tight align-middle my-0.5 whitespace-nowrap flex-shrink-0" style="${badgeStyle}">
+        <span class="inline-flex items-center text-xs sm:text-sm font-black px-3 py-1 rounded-xl border shadow-md font-mono tracking-tight align-middle my-1 sm:my-0.5 whitespace-nowrap flex-shrink-0" style="${badgeStyle}">
           ${fmt}
         </span>
       ` : '';
 
       if (isModal) {
         return `
-          <div class="space-y-2.5">
-            <div class="flex items-center justify-between gap-3 flex-wrap">
-              <div class="flex items-center gap-2.5 flex-wrap flex-1 min-w-0">
+          <div class="space-y-2">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
+              <div class="flex items-center gap-2 flex-wrap min-w-0">
                 ${playlistBadge}
-                <span class="text-2xl sm:text-3xl md:text-4xl font-black text-white drop-shadow-md leading-tight">${kor}</span>
+                <span class="text-xl sm:text-2xl md:text-3xl font-black text-white drop-shadow-md leading-snug break-keep">${kor}</span>
               </div>
-              <div class="flex-shrink-0 ml-auto">
+              <div class="flex-shrink-0 self-start sm:self-auto sm:ml-auto">
                 ${badgeHtml}
               </div>
             </div>
-            ${eng ? `<div class="text-sm sm:text-base font-bold text-amber-300/85 tracking-wide font-sans flex items-center gap-2"><span class="text-white/40">Global Title:</span> <span>${eng}</span></div>` : ''}
+            ${eng ? `<div class="text-xs sm:text-sm md:text-base font-bold text-amber-300/85 tracking-wide font-sans flex items-center gap-2"><span class="text-white/40">Global Title:</span> <span>${eng}</span></div>` : ''}
           </div>
         `;
       } else {
         return `
           <div class="flex flex-col gap-1.5">
-            <div class="flex items-center justify-between gap-3 flex-wrap">
-              <div class="flex items-center gap-2.5 flex-wrap flex-1 min-w-0">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+              <div class="flex items-center gap-2 flex-wrap min-w-0">
                 ${playlistBadge}
-                <span class="text-lg sm:text-2xl md:text-3xl font-black text-white group-hover:text-amber-300 transition-colors leading-snug">${kor}</span>
+                <span class="text-base sm:text-xl md:text-2xl font-black text-white group-hover:text-amber-300 transition-colors leading-snug break-keep">${kor}</span>
               </div>
-              <div class="flex-shrink-0 ml-auto">
+              <div class="flex-shrink-0 self-start sm:self-auto sm:ml-auto">
                 ${badgeHtml}
               </div>
             </div>
@@ -1175,9 +1175,9 @@ body {
           const trackCode = pl.code || `${ch.code}_0${idx + 1}`;
           const guideSnippet = getCleanListeningGuide(pl.listeningGuide);
           rowsHtml += `
-            <div onclick="openPlaylistModal(${idx})" class="playlist-embossed-item rounded-2xl sm:rounded-3xl p-5 sm:p-7 transition-all flex flex-col lg:flex-row lg:items-center justify-between gap-5 group cursor-pointer">
+            <div onclick="openPlaylistModal(${idx})" class="playlist-embossed-item rounded-2xl sm:rounded-3xl p-4 sm:p-6 transition-all flex flex-col lg:flex-row lg:items-center justify-between gap-5 group cursor-pointer">
               <div class="flex items-start gap-4 sm:gap-5 min-w-0 flex-1">
-                <div class="w-13 h-13 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-white/10 to-white/5 border border-white/25 flex items-center justify-center flex-shrink-0 shadow-md group-hover:scale-110 transition-transform">
+                <div class="w-12 h-12 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-white/10 to-white/5 border border-white/25 flex items-center justify-center flex-shrink-0 shadow-md group-hover:scale-110 transition-transform">
                   <span class="text-2xl sm:text-4xl">${ch.emoji}</span>
                 </div>
                 <div class="min-w-0 flex-1 space-y-2">
