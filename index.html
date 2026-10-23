@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="google" content="notranslate" />
-  <title>HANULSTUDIO.com — 8대 글로벌 전용 채널 · 56개 마스터 사운드 테라피 (Fender Studio Pro 8)</title>
+    <title>HANULSTUDIO.com — 8대 글로벌 전용 채널 · 56개 마스터 사운드 테라피 (Fender Studio Pro 8)</title>
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
@@ -299,20 +298,31 @@ body {
     0 3px 8px rgba(0,0,0,0.5);
 }
 
-/* Suppress Google Translate default top banner & tooltips */
+/* Suppress Google Translate default top banner & tooltips without breaking execution */
 .goog-te-banner-frame.skiptranslate,
 .goog-te-banner-frame {
-  display: none !important;
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
+  width: 1px !important;
+  height: 1px !important;
+  opacity: 0 !important;
   visibility: hidden !important;
-  height: 0 !important;
 }
 
 #google_translate_element {
-  display: none !important;
+  position: fixed !important;
+  bottom: -9999px !important;
+  right: -9999px !important;
+  width: 1px !important;
+  height: 1px !important;
+  opacity: 0.01 !important;
+  pointer-events: none !important;
+  z-index: -100 !important;
 }
 
-.skiptranslate:not(.custom-translator) {
-  display: none !important;
+.goog-te-gadget {
+  font-size: 0 !important;
 }
 
 .goog-tooltip, .goog-tooltip:hover {
@@ -342,9 +352,20 @@ body {
       animation: fadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
   </style>
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'ko',
+        includedLanguages: 'en,zh-CN,zh-TW,ja,es,ar,pt,id,fr,ru,de,hi,bn,it,vi,tr',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        autoDisplay: false
+      }, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </head>
 <body class="bg-[#070709] text-white min-h-screen selection:bg-[#d4af37] selection:text-black">
-  <div id="google_translate_element" style="display:none;" aria-hidden="true"></div>
+  <div id="google_translate_element" style="position:fixed;bottom:-9999px;right:-9999px;width:1px;height:1px;opacity:0.01;pointer-events:none;z-index:-1;"></div>
 
   <!-- 1. TOP STICKY HEADER (z-[100] so language dropdown is ALWAYS on top and 100% opaque) -->
   <header class="sticky top-0 z-[100] backdrop-blur-xl bg-[#070709]/95 border-b border-white/15 px-4 sm:px-8 py-4 shadow-2xl">
@@ -768,6 +789,16 @@ body {
     ];
     const TOP_14_LANGUAGES = TOP_16_LANGUAGES;
 
+
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'ko',
+        includedLanguages: 'en,zh-CN,zh-TW,ja,es,ar,pt,id,fr,ru,de,hi,bn,it,vi,tr',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        autoDisplay: false
+      }, 'google_translate_element');
+    }
+
     let activeChannelId = CHANNEL_BLOCKS[0].id;
     let aspectMode = 'explorer';
     let scienceFilter = 'all';
@@ -867,18 +898,39 @@ body {
 
     function applyLanguage(langCode) {
       closeAllLangMenus();
-      if (langCode === 'ko') {
+      if (!langCode || langCode === 'ko') {
         resetToKorean();
         return;
       }
       currentLang = langCode;
       try { localStorage.setItem('hanul_lang', langCode); } catch (e) {}
-      document.cookie = `googtrans=/ko/${langCode}; path=/;`;
+
+      // Robust multi-domain cookie writing for Google Translate
+      const host = window.location.hostname;
+      const cookieVal = `/ko/${langCode}`;
+      const domainVariants = [
+        '',
+        `; domain=${host}`,
+        `; domain=.${host}`,
+        `; domain=.${host.replace(/^www\./, '')}`
+      ];
+      domainVariants.forEach(dom => {
+        document.cookie = `googtrans=${cookieVal}; path=/${dom};`;
+      });
+
       renderLangLists();
-      const combo = document.querySelector('.goog-te-combo');
+
+      // Trigger Google Translate combo if available
+      let combo = document.querySelector('.goog-te-combo');
       if (combo) {
         combo.value = langCode;
-        combo.dispatchEvent(new Event('change'));
+        combo.dispatchEvent(new Event('change', { bubbles: true }));
+        if (typeof combo.onchange === 'function') {
+          combo.onchange();
+        }
+      } else {
+        // If combo is not ready, reload page with googtrans cookie active
+        window.location.reload();
       }
     }
 
@@ -886,13 +938,31 @@ body {
       closeAllLangMenus();
       currentLang = 'ko';
       try { localStorage.removeItem('hanul_lang'); } catch (e) {}
-      document.cookie = 'googtrans=/ko/ko; path=/;';
+
+      const host = window.location.hostname;
+      const domainVariants = [
+        '',
+        `; domain=${host}`,
+        `; domain=.${host}`,
+        `; domain=.${host.replace(/^www\./, '')}`
+      ];
+      const past = 'expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+      domainVariants.forEach(dom => {
+        document.cookie = `googtrans=; ${past}${dom}`;
+        document.cookie = `googtrans=/ko/ko; path=/${dom};`;
+      });
+
       renderLangLists();
-      const combo = document.querySelector('.goog-te-combo');
+
+      let combo = document.querySelector('.goog-te-combo');
       if (combo) {
         combo.value = 'ko';
-        combo.dispatchEvent(new Event('change'));
+        combo.dispatchEvent(new Event('change', { bubbles: true }));
+        if (typeof combo.onchange === 'function') {
+          combo.onchange();
+        }
       }
+      window.location.reload();
     }
 
     function parsePlaylistTitle(rawTitle) {
@@ -936,36 +1006,45 @@ body {
         badgeStyle = 'background-color: rgba(168, 85, 247, 0.22); color: #d8b4fe; border-color: rgba(168, 85, 247, 0.55);';
       }
 
+      // High-contrast vibrant Electric Rose / Ruby playlist badge (clearly stands out from gold/amber surroundings)
       const playlistBadge = `
-        <span class="inline-flex items-center px-2 sm:px-2.5 py-0.5 rounded-lg text-xs sm:text-sm font-black bg-gradient-to-r from-amber-400/25 via-amber-500/25 to-yellow-500/25 text-amber-300 border border-amber-400/50 shadow-[0_0_12px_rgba(245,158,11,0.22)] font-serif italic tracking-wide align-middle select-none mr-1.5 flex-shrink-0">
+        <span class="inline-flex items-center px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-xl text-xs sm:text-sm md:text-base font-black bg-gradient-to-r from-rose-600 via-rose-500 to-red-500 text-white border-2 border-rose-300/80 shadow-[0_0_16px_rgba(244,63,94,0.45)] font-serif italic tracking-wider align-middle select-none mr-2.5 flex-shrink-0 drop-shadow-md">
           [𝒑𝒍𝒂𝒚𝒍𝒊𝒔𝒕]
         </span>
       `;
 
       const badgeHtml = fmt ? `
-        <span class="inline-flex items-center text-xs sm:text-sm font-black px-2.5 py-1 rounded-lg border shadow-sm font-mono tracking-tight align-middle ml-1.5 my-0.5 whitespace-nowrap" style="${badgeStyle}">
+        <span class="inline-flex items-center text-xs sm:text-sm font-black px-3 py-1 rounded-xl border shadow-md font-mono tracking-tight align-middle my-0.5 whitespace-nowrap flex-shrink-0" style="${badgeStyle}">
           ${fmt}
         </span>
       ` : '';
 
       if (isModal) {
         return `
-          <div class="space-y-1.5">
-            <div class="text-xl sm:text-2xl md:text-3xl font-black text-white leading-snug flex items-center flex-wrap gap-1.5">
-              ${playlistBadge}
-              <span class="text-white drop-shadow-md">${kor}</span>
-              ${badgeHtml}
+          <div class="space-y-2.5">
+            <div class="flex items-center justify-between gap-3 flex-wrap">
+              <div class="flex items-center gap-2.5 flex-wrap flex-1 min-w-0">
+                ${playlistBadge}
+                <span class="text-2xl sm:text-3xl md:text-4xl font-black text-white drop-shadow-md leading-tight">${kor}</span>
+              </div>
+              <div class="flex-shrink-0 ml-auto">
+                ${badgeHtml}
+              </div>
             </div>
-            ${eng ? `<div class="text-xs sm:text-sm md:text-base font-bold text-amber-300/85 tracking-wide font-sans flex items-center gap-2"><span class="text-white/40">Global Title:</span> <span>${eng}</span></div>` : ''}
+            ${eng ? `<div class="text-sm sm:text-base font-bold text-amber-300/85 tracking-wide font-sans flex items-center gap-2"><span class="text-white/40">Global Title:</span> <span>${eng}</span></div>` : ''}
           </div>
         `;
       } else {
         return `
           <div class="flex flex-col gap-1.5">
-            <div class="text-base sm:text-lg md:text-xl font-black text-white group-hover:text-amber-300 transition-colors leading-snug flex items-center flex-wrap gap-1.5">
-              ${playlistBadge}
-              <span class="text-white group-hover:text-amber-300 transition-colors">${kor}</span>
-              ${badgeHtml}
+            <div class="flex items-center justify-between gap-3 flex-wrap">
+              <div class="flex items-center gap-2.5 flex-wrap flex-1 min-w-0">
+                ${playlistBadge}
+                <span class="text-lg sm:text-2xl md:text-3xl font-black text-white group-hover:text-amber-300 transition-colors leading-snug">${kor}</span>
+              </div>
+              <div class="flex-shrink-0 ml-auto">
+                ${badgeHtml}
+              </div>
             </div>
             ${eng ? `<div class="text-xs sm:text-sm font-medium text-white/60 tracking-normal flex items-center gap-1.5"><span class="text-white/40 font-mono text-[11px] uppercase">Global:</span> <span>${eng}</span></div>` : ''}
           </div>
@@ -1102,12 +1181,7 @@ body {
                   <span class="text-2xl sm:text-4xl">${ch.emoji}</span>
                 </div>
                 <div class="min-w-0 flex-1 space-y-2">
-                  <div class="flex items-center gap-2 flex-wrap">
-                    <span class="font-mono text-xs font-black text-amber-300 px-2.5 py-0.5 rounded-lg bg-amber-500/15 border border-amber-400/40">${trackCode}</span>
-                    <span class="text-xs font-black px-3 py-0.5 rounded-full border ${pl.badgeColor}">${pl.badge}</span>
-                    <span class="text-[11px] text-emerald-300 font-mono font-bold">● Dolby Atmos 3D / 8D Spatial Audio</span>
-                    <span class="text-[11px] text-white/50 font-mono hidden sm:inline">● Fender Studio Pro 8</span>
-                  </div>
+                  
 
                   <div>
                     ${formatPlaylistTitleHTML(pl.title, false)}
@@ -1185,10 +1259,7 @@ body {
           const trackCode = pl.code || `${ch.code}_0${idx + 1}`;
           cardsHtml += `
             <div onclick="openPlaylistModal(${idx})" class="tactile-surface tactile-surface-hover group cursor-pointer relative ${ratioCls} w-full rounded-2xl sm:rounded-3xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between p-5 overflow-hidden" style="border: 2px solid ${ch.color}55; border-top-color: #ffffff;">
-              <div class="flex items-center justify-between gap-2 z-10">
-                <span class="text-xs font-mono font-black px-2.5 py-1 rounded-lg bg-amber-500/20 text-amber-300 border border-amber-400/40">${trackCode}</span>
-                <span class="text-xs font-black px-3 py-1 rounded-full border ${pl.badgeColor}">${pl.badge}</span>
-              </div>
+              
               <div class="z-10 my-auto py-3">
                 <div class="leading-snug mb-2 text-base sm:text-lg line-clamp-3">${formatPlaylistTitleHTML(pl.title, false)}</div>
                 <p class="font-bold text-amber-100/90 text-xs sm:text-sm line-clamp-2">${pl.subtitle}</p>
@@ -1306,20 +1377,25 @@ body {
       box.innerHTML = `
         <div class="bg-[#14131e] border-b-2 border-black/80 px-6 py-4 flex items-center justify-between">
           <div class="flex items-center gap-3">
-            <span class="text-2xl">${ch.emoji}</span>
+            <span class="text-2xl sm:text-3xl">${ch.emoji}</span>
             <div>
-              <span class="text-xs font-mono font-black text-amber-300 uppercase">${ch.code} • ${pl.code || ''} • Fender Studio Pro 8 Master Docent</span>
-              <h3 class="text-sm sm:text-lg font-black text-white truncate max-w-xl"><span class="text-amber-300 font-serif italic mr-1">[𝒑𝒍𝒂𝒚𝒍𝒊𝒔𝒕]</span> ${parsePlaylistTitle(pl.title).kor || pl.title}</h3>
+              <h3 class="text-base sm:text-xl font-black text-white truncate max-w-xl flex items-center gap-2">
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-lg text-xs sm:text-sm font-black bg-gradient-to-r from-rose-600 to-red-500 text-white border border-rose-300 shadow-sm font-serif italic flex-shrink-0">[𝒑𝒍𝒂𝒚𝒍𝒊𝒔𝒕]</span>
+                <span class="truncate">${parsePlaylistTitle(pl.title).kor || pl.title}</span>
+              </h3>
             </div>
           </div>
-          <button onclick="closePlaylistModal()" class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white font-black text-lg">✕</button>
+          <button onclick="closePlaylistModal()" class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white font-black text-lg flex items-center justify-center">✕</button>
         </div>
 
-        <div class="p-6 border-b border-white/15 flex flex-col lg:flex-row lg:items-center justify-between gap-4" style="background: linear-gradient(135deg, ${ch.color}30 0%, #0d0c14 100%);">
-          <div>
-            <span class="text-xs font-black px-3 py-1 rounded-full border ${pl.badgeColor}">${pl.badge}</span>
+        <div class="p-6 border-b border-white/15 flex flex-col lg:flex-row lg:items-center justify-between gap-5" style="background: linear-gradient(135deg, ${ch.color}30 0%, #0d0c14 100%);">
+          <div class="space-y-3.5 flex-1 min-w-0">
+            <!-- Distinct Pill Badge with generous margin ensuring NO overlap with [playlist] -->
+            <div class="mb-3.5">
+              <span class="text-xs sm:text-sm font-black px-3.5 py-1.5 rounded-full border shadow-md ${pl.badgeColor}">${pl.badge}</span>
+            </div>
             ${formatPlaylistTitleHTML(pl.title, true)}
-            <p class="text-sm sm:text-lg text-amber-200 font-bold mt-1">${pl.subtitle}</p>
+            <p class="text-sm sm:text-lg text-amber-200 font-bold mt-2">${pl.subtitle}</p>
           </div>
           <div class="flex flex-wrap items-center gap-2.5 flex-shrink-0">
             <button onclick="speakPlaylist(${selectedPlaylistIndex})" class="embossed-gold-action px-5 py-2.5 rounded-xl text-xs sm:text-sm font-black flex items-center gap-2">
@@ -1465,12 +1541,35 @@ body {
     window.addEventListener('DOMContentLoaded', () => {
       try {
         const saved = localStorage.getItem('hanul_lang');
-        if (saved) currentLang = saved;
+        if (saved && saved !== 'ko') {
+          currentLang = saved;
+        } else {
+          const m = document.cookie.match(/googtrans=\/ko\/([a-zA-Z-]+)/);
+          if (m && m[1]) currentLang = m[1];
+        }
       } catch (e) {}
       renderLangLists();
       renderChannelsGrid();
       renderPlaylistsSection();
       renderScienceCards();
+
+      // If a non-Korean language was selected, sync with Google Translate combo
+      if (currentLang && currentLang !== 'ko') {
+        let attempts = 0;
+        const syncInterval = setInterval(() => {
+          attempts++;
+          const combo = document.querySelector('.goog-te-combo');
+          if (combo) {
+            clearInterval(syncInterval);
+            if (combo.value !== currentLang) {
+              combo.value = currentLang;
+              combo.dispatchEvent(new Event('change', { bubbles: true }));
+              if (typeof combo.onchange === 'function') combo.onchange();
+            }
+          }
+          if (attempts > 30) clearInterval(syncInterval);
+        }, 150);
+      }
     });
   </script>
 </body>
