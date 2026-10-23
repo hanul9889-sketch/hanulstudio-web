@@ -1004,10 +1004,10 @@ body {
         badgeStyle = 'background-color: rgba(168, 85, 247, 0.22); color: #d8b4fe; border-color: rgba(168, 85, 247, 0.55);';
       }
 
-      // 24K Antique Gold & Dark Obsidian Luxury Playlist Badge
+      // 24K Radiant Luminous Gold Playlist Badge (광채나는 황금색)
       const playlistBadge = `
-        <span class="inline-flex items-center gap-1.5 px-3 py-1 sm:px-3.5 sm:py-1 rounded-xl text-xs sm:text-sm font-extrabold bg-gradient-to-b from-[#262016] via-[#1a150e] to-[#0f0c08] text-[#fef08a] border border-[#d97706]/75 shadow-[inset_0_1px_1.5px_rgba(254,243,199,0.4),0_3px_10px_rgba(0,0,0,0.85),0_0_15px_rgba(245,158,11,0.22)] font-serif italic tracking-wider select-none mr-2 flex-shrink-0 drop-shadow-sm">
-          <span class="text-[10px] text-amber-400 font-sans not-italic">✦</span>
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 sm:px-3.5 sm:py-1 rounded-xl text-xs sm:text-sm font-black text-black border border-[#fffbeb] shadow-[0_0_20px_rgba(251,191,36,0.75),inset_0_1.5px_2px_rgba(255,255,255,0.95),0_3px_8px_rgba(0,0,0,0.5)] font-serif italic tracking-wider select-none mr-2 flex-shrink-0 drop-shadow-md" style="background: linear-gradient(135deg, #fffbeb 0%, #fef08a 25%, #ffd700 50%, #f59e0b 75%, #d97706 100%);">
+          <span class="text-[10px] text-black font-sans not-italic font-black">✦</span>
           <span>𝒑𝒍𝒂𝒚𝒍𝒊𝒔𝒕</span>
         </span>
       `;
@@ -1413,7 +1413,7 @@ body {
             <span class="text-2xl sm:text-3xl">${ch.emoji}</span>
             <div>
               <h3 class="text-base sm:text-xl font-black text-white truncate max-w-xl flex items-center gap-2">
-                <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-lg text-xs sm:text-sm font-extrabold bg-gradient-to-b from-[#262016] to-[#120f0a] text-[#fef08a] border border-[#d97706]/70 shadow-sm font-serif italic flex-shrink-0"><span class="text-[9px] text-amber-400 font-sans not-italic">✦</span><span>𝒑𝒍𝒂𝒚𝒍𝒊𝒔𝒕</span></span>
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-lg text-xs sm:text-sm font-black text-black border border-[#fffbeb] shadow-[0_0_14px_rgba(251,191,36,0.7),inset_0_1px_1.5px_rgba(255,255,255,0.95)] font-serif italic flex-shrink-0 select-none mr-2" style="background: linear-gradient(135deg, #fffbeb 0%, #fef08a 25%, #ffd700 50%, #f59e0b 75%, #d97706 100%);"><span class="text-[9px] text-black font-sans not-italic font-black">✦</span><span>𝒑𝒍𝒂𝒚𝒍𝒊𝒔𝒕</span></span>
                 <span class="truncate">${parsePlaylistTitle(pl.title).eng ? parsePlaylistTitle(pl.title).eng + ' | ' + parsePlaylistTitle(pl.title).kor : pl.title}</span>
               </h3>
             </div>
