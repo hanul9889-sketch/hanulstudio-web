@@ -3,8 +3,8 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'HANULSTUDIO.com — 황금비율로 설계된 프리미엄 사운드 테라피',
-  description: '우주의 주파수로 당신의 의식을 깨웁니다. 8대 글로벌 전용 채널 56개 마스터 재생목록 • Fender Studio Pro 8. 8D 입체 음향, 바이노럴 비트, 솔페지오 주파수 과학 기반 치유 사운드.',
+  title: 'HANULSTUDIO.com — 64-Bit Dolby Atmos 4-Tier Spatial Audio & B2B Functional Sound Therapy',
+  description: 'Standard 24-Bit/48kHz 4-Tier Spatial Audio Architecture (Atmos Off/Near/Mid/Far) & ITU-R BS.1770 (-16.0 LUFS / -1.5 dBTP) Certified. 8 Official YouTube Channels & 56 Master Playlists engineered in Fender Studio Pro 8.',
 };
 
 export default function RootLayout({
@@ -13,12 +13,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ko" className="scroll-smooth">
-      <head>
-        <meta name="google" content="notranslate" />
-      </head>
-      <body className="bg-[#0a0a0c] text-white min-h-screen selection:bg-[#d4af37] selection:text-black">
-        <div id="google_translate_element" style={{ display: 'none' }} aria-hidden="true"></div>
+    <html lang="ko" className="dark scroll-smooth">
+      <body className="min-h-screen bg-[#070709] text-[#f3f0e6] antialiased selection:bg-amber-500 selection:text-black">
         {children}
       </body>
     </html>
